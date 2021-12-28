@@ -20,18 +20,18 @@ ost (a:as) = ost as
 
 
 
-part1:: Int -> [a] -> [a]
-part1 _ [] = []
-part1 0 xs = xs
-part1 n (_:xs) = part1(n-1) xs
+after:: Int -> [a] -> [a]
+after _ [] = []
+after 0 xs = xs
+after n (_:xs) = after(n-1) xs
 
-part2 :: Int -> [a] -> [a]
-part2 n _ | n <= 0 = []
-part2 _ [] = []
-part2 n (x:xs)  =  x : part2 (n-1) xs
+before :: Int -> [a] -> [a]
+before n _ | n <= 0 = []
+before _ [] = []
+before n (x:xs)  =  x : before (n-1) xs
 
 divide :: Int -> Int -> [a] -> [a]
-divide from to xs = part2 (from - 1) xs ++ part1 to xs
+divide from to xs = before (from - 1) xs ++ after to xs
 
 -- Вхідні дані:
 -- ghci> divide 2 4 "123456789"   

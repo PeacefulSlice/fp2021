@@ -16,7 +16,7 @@
 -- import "../lr3/lr3.hs"
 -- import qualified Prelude as P
 module LR5 where
-import qualified Lab3 as L
+import Lab3 as L
 -- mix_without :: [a] -> [a]
 -- mix_without [] = []
 -- mix_without [x] = [x]
